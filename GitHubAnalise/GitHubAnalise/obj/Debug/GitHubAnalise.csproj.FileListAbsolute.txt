@@ -1,0 +1,10 @@
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.exe.config
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.exe
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.pdb
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\bin\Debug\Octokit.dll
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\bin\Debug\Octokit.xml
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csprojAssemblyReference.cache
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csproj.CopyComplete
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.exe
+C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.pdb
