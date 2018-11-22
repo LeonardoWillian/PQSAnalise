@@ -8,3 +8,13 @@ C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitH
 C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csproj.CopyComplete
 C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.exe
 C:\Users\Leonardo Ávila\source\repos\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.pdb
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.exe.config
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.exe
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\bin\Debug\GitHubAnalise.pdb
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\bin\Debug\Octokit.dll
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\bin\Debug\Octokit.xml
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csprojAssemblyReference.cache
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csproj.CoreCompileInputs.cache
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.csproj.CopyComplete
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.exe
+D:\Documentos\Leonardo\Projects\PQSAnalise\GitHubAnalise\GitHubAnalise\obj\Debug\GitHubAnalise.pdb

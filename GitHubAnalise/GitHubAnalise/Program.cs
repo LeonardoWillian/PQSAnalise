@@ -19,40 +19,75 @@ namespace GitHubAnalise
             var password = Console.ReadLine();
             var basicAuth = new Credentials(user, password);
             github.Credentials = basicAuth;
-            Dictionary<string, string> repositories = new Dictionary<string, string>()
+            
+            List<string> users = new List<string>
             {
-                { "Tyriar", "vscode-terminal-api-example" },
-                { "isidorn", "aspnet" },
-                { "rebornix", "monaco-vue" },
-                { "sandy081", "vscode-todotasks" },
-                { "bpasero", "fsevents-prebuilt" },
-                { "aeschli", "sample-languages" },
-                { "jrieken", "md-navigate" },
-                { "ramya-rao-a", "electron-crash-server-go" },
-                { "joaomoreno", "large-scale-typescript" },
-                { "egamma", "mobiletry" }
+                "Tyriar",
+                "isidorn",
+                "rebornix",
+                "sandy081",
+                "bpasero",
+                "aeschli",
+                "jrieken",
+                "ramya-rao-a",
+                "joaomoreno",
+                "egamma",
             };
-
-            GetRepositories(github, repositories);
+            
+            GetRepositoriesStatistics(github, users);
             
             Console.ReadKey();
         }
 
-        public static async void GetRepositories(GitHubClient github, Dictionary<string, string> repos)
+        public static async void GetRepositoriesStatistics(GitHubClient github, List<string> users)
         {
-            List<Repository> repositorios = new List<Repository>();
-
-            foreach (var repo in repos)
+            List<Usuario> usuarios = new List<Usuario>();
+            var vscode = github.Repository.Get("Microsoft", "vscode");
+            var commitsVSCode = await github.Repository.Commit.GetAll(vscode.Result.Id);
+            var issuesVSCode = await github.Issue.GetAllForRepository(vscode.Result.Id);
+            foreach (var user in users)
             {
-                repositorios.Add(await github.Repository.Get(repo.Key, repo.Value));
+                var usuarioClass = await github.User.Get(user);
+                var repositorios = await github.Repository.GetAllForUser(user);
+                int somaStars = 0;
+                int somaForks = 0;
+                int somaResponsavelIssuesVSCode = 0;
+                int somaPullRequestsAceitosVSCode = 0;
+                foreach(var issue in issuesVSCode)
+                {
+                    if(issue.Assignee != null)
+                        somaResponsavelIssuesVSCode += issue.Assignee.Login == user ? 1 : 0;
+                }
+                foreach(var commit in commitsVSCode)
+                {
+                    if(commit.Author != null)
+                        somaPullRequestsAceitosVSCode += commit.Author.Login == user ? 1 : 0;
+                }
+                foreach(var repo in repositorios)
+                {
+                    somaStars += repo.StargazersCount;
+                    somaForks += repo.ForksCount;
+                }
+                usuarios.Add(new Usuario { Nome = user,
+                    QtdForks = somaForks,
+                    QtdStars = somaStars,
+                    QtdIssuesResponsavel = somaResponsavelIssuesVSCode,
+                    QtdPullRequestAceito = somaPullRequestsAceitosVSCode
+                });
 
             }
-            foreach(var repo in repositorios)
+            foreach(var usuario in usuarios)
             {
-                Console.WriteLine("Repositorio: {0}\n\n" +
-                    "Contagem de forks: {1}\n" +
-                    "Contagem de stars: {2}\n" +
-                    "", repo.FullName, repo.ForksCount, repo.StargazersCount);
+                Console.WriteLine("Usuário: {0}\n" +
+                    "Soma de forks: {1}\n" +
+                    "Soma de stars: {2}\n" +
+                    "Responsável por {3} issues no VSCode\n" +
+                    "Teve {4} pull requests aceitos no VSCode\n\n", 
+                    usuario.Nome, 
+                    usuario.QtdForks, 
+                    usuario.QtdStars, 
+                    usuario.QtdIssuesResponsavel,
+                    usuario.QtdPullRequestAceito);
             }
             
         }
